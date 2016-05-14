@@ -15,5 +15,13 @@ export class Utils {
             source = source.replace(key, value);
             return self;
         };
-    }    
+    }
+
+    static isNull(obj: any): boolean {
+        return _.isUndefined(obj) || _.isNull(obj);
+    }
+
+    static isEmpty(obj: any): boolean {
+        return Utils.isNull(obj) || _.isEmpty(obj);
+    }
 }
