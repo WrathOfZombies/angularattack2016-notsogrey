@@ -1,25 +1,29 @@
+<!doctype>
 <html>
-  <head>
-    <title>Angular 2 QuickStart JS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <!-- 1. Load libraries -->
-    <!-- IE required polyfill -->
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.umd.js"></script>
-    <script src="node_modules/@angular/core/core.umd.js"></script>
-    <script src="node_modules/@angular/common/common.umd.js"></script>
-    <script src="node_modules/@angular/compiler/compiler.umd.js"></script>
-    <script src="node_modules/@angular/platform-browser/platform-browser.umd.js"></script>
-    <script src="node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js"></script>
-    <!-- 2. Load our 'modules' -->
-    <script src='app/app.component.js'></script>
-    <script src='app/main.js'></script>
-  </head>
-  <!-- 3. Display the application -->
-  <body>
-    <my-app>Loading...</my-app>
-  </body>
+
+<head>
+  <title>Not So Grey</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 1. Load libraries -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/materialize-css/dist/css/materialize.css"></scirpt>
+  <script src="node_modules/materialize-css/dist/js/materialize.js"></scirpt>
+
+  <!-- IE required polyfill -->
+  <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+
+  <!-- 2. Configure SystemJS -->
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="www/system.config.js"></script>
+</head>
+
+<body>
+  <not-so-grey>Loading Not So Grey...</not-so-grey>
+</body>
+
 </html>
