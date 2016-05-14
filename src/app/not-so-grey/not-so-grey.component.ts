@@ -29,7 +29,7 @@ export class NotSoGreyComponent {
                 mode: "",
                 values: [22, 2, 3],
                 hex: "#333333",
-                colorIndex: '2'
+am                colorIndex: '2'
             },
             {
                 name: "",
