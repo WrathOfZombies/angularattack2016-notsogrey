@@ -8,6 +8,7 @@
 !node_modules/@angular/platform-browser/platform-browser.umd.js
 !node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js
 
+node_modules/**
 typings/**
 src/**
 .gitignore
