@@ -7,3 +7,13 @@
 !node_modules/@angular/compiler/compiler.umd.js
 !node_modules/@angular/platform-browser/platform-browser.umd.js
 !node_modules/@angular/platform-browser-dynamic/platform-browser-dynamic.umd.js
+
+typings/**
+src/**
+.gitignore
+.gitattributes
+gulp.config.json
+gulpfile.js
+README.md
+tsconfig.json
+typings.json
