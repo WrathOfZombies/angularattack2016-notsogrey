@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {PathResolver} from '../shared/helpers/utilities';
+import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ChooseComponent} from '../not-so-grey.choose/not-so-grey.choose.component';
+import {CustomizeComponent} from '../not-so-grey.customize/not-so-grey.customize.component'
 import {ColorService, ISwatch} from '../shared/services/color.service';
 
 let view = 'not-so-grey';
