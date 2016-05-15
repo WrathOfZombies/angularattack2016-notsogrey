@@ -94,7 +94,6 @@ export class ChooseComponent implements OnInit {
     }
 
     select(swatch: w3color) {
-        console.log('customize');
         this._router.navigate(['Customize', { hex: swatch.toHexString() }]);
     }
 }
