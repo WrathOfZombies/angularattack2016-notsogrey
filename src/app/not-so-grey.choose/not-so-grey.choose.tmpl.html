@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-sm-8 col-md-9 col-lg-10 imageContainer">
+        <div id="drop" (dragover)="dragOver($event)" (drop)="drop($event)">
+            <div class="placeholder" *ngIf="!isLoaded">
+                Drop an image here to pick colors from it.
+            </div>
+            <canvas></canvas>
+        </div>
+        <div id="swatches">
+            <div class="swatch">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-3 col-lg-2">
+        list
+    </div>
+</div>

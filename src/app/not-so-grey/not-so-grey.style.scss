@@ -1,5 +1,27 @@
-.nsg-panel {
-    padding: 15px;
-    background-color: #F2F2F2;
-    height: 100%;       
+@import '../../styles/mixins.scss';
+
+.not-so-grey {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;    
+    @include flex();
+}
+
+.nsg-header {
+    background-color: #222222;
+    color: #bbbbbb;
+    height: 60px;
+    @include center-flex();        
+}
+
+.nsg-footer {
+    background-color: #222222;
+    color: #bbbbbb;
+    height: 40px;
+    @include center-flex();    
+}
+
+.nsg-main {
+    flex: 1 0 0;
+    height: calc(100vh - 100px);
 }

@@ -10,7 +10,7 @@ export class ImageHelper {
     processImage(image: HTMLImageElement) {
         var vibrant = new Vibrant(image);
         var swatches = vibrant.swatches();
-        console.log(swatches);
+        return swatches;
     }
 
     drawImageScaled(image: HTMLImageElement, canvas: HTMLCanvasElement) {

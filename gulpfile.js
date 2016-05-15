@@ -18,7 +18,7 @@ gulp.task('clean', function (done) {
 gulp.task('compile:sass', function () {
     return gulp.src(config.app.source + "/app/**/*.scss")
         .pipe(sass())
-        .pipe(gulp.dest(config.app.dest));
+        .pipe(gulp.dest(config.app.dest + '/app'));
 });
 
 gulp.task('compile:common:sass', function () {
@@ -39,15 +39,23 @@ gulp.task('compile:ts', function () {
 });
 
 gulp.task('copy', function () {
-    gulp.src(config.app.source + "/**/!(*.ts|*.scss)", { base: config.app.source })
+    gulp.src([
+        config.app.source + "/**/*",
+        "!" + config.app.source + "/**/*.scss",
+        "!" + config.app.source + "/**/*.ts",
+    ], { base: config.app.source })
         .pipe(gulp.dest(config.app.dest));
 });
 
 gulp.task('watch', function () {
     gulp.watch(config.app.source + "/app/**/*.scss", ['compile:sass']);
     gulp.watch(config.app.source + "/styles/**/*.scss", ['compile:common:sass']);
-    gulp.watch(config.app.source + "/**/*.ts", ['compile:ts']);
-    gulp.watch(config.app.source + "/**/!(*.ts|*.scss)", ['refresh']);
+    gulp.watch([
+        config.app.source + "/**/*",
+        "!" + config.app.source + "/**/*.scss",
+        "!" + config.app.source + "/**/*.ts",
+    ], ['compile:ts']);
+    gulp.watch(config.app.source + "/**/!(*.ts|*.scss)", ['copy']);
 });
 
 gulp.task('build', ['compile:sass', 'compile:common:sass', 'compile:ts', 'copy']);

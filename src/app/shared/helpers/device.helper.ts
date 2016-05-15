@@ -1,5 +1,9 @@
+import {Injectable, EventEmitter} from '@angular/core';
+
+@Injectable()
 export class DeviceHelper {
     resolution: any = {};
+    windowUpdated$: EventEmitter<any>
 
     constructor() {
         this.resolution = {
@@ -18,10 +22,11 @@ export class DeviceHelper {
         var lazyUpdate = _.throttle((event) => {
             this.resolution.size = this.getWindowSize();
             this.resolution.type = this.updateType();
-            // TODO: emit resolution update
+            this.windowUpdated$.emit(this.resolution);
         }, 250);
 
         window.onresize = lazyUpdate;
+        this.windowUpdated$ = new EventEmitter();
     }
 
     getWindowSize() {
