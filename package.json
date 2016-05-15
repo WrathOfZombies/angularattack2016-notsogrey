@@ -2,7 +2,7 @@
   "name": "not-so-grey",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrent \"npm run gulp\" \"npm run lite\" \"node proxy_server.js\"",
+    "start": "concurrent \"npm run gulp\" \"npm run lite\"",
     "lite": "lite-server  -c gulp.config.json",
     "gulp": "gulp",
     "postinstall": "typings install",

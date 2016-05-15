@@ -5,5 +5,9 @@
     <span class="swatch colorDarkVibrant"></span>
     <span class="swatch colorDarkMuted"></span>
     <span class="swatch colorLightVibrant"></span>
-    <div id="drop">Drop an image here <small>(Looks like reading an uploaded image works in Chrome only)</small></div>
+    <div id="drop" (dragover)="dragOver($event)" (drop)="drop($event)">
+        Drop an image here
+        <canvas></canvas>
+        <small>(Looks like reading an uploaded image works in Chrome only)</small>
+    </div>
 </div>

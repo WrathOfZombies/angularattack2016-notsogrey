@@ -127,14 +127,8 @@ new Configuration()
             name: 'underscore',
             main: '/underscore',
             production: 'node_modules/underscore'
-        },
-        {
-            name: 'vibrant',
-            main: '/src/vibrant',
-            production: 'node_modules/vibrant'
         }
     ])
     .queueImport('underscore')
-    .queueImport('vibrant')
     .queueImport('app')
     .configure();
