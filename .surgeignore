@@ -1,3 +1,8 @@
 Cm5vZGVfbW9kdWxlcy8qKgp0eXBpbmdzLyoqCnNyYy8qKgouZ2l0aWdub3Jl
 Ci5naXRhdHRyaWJ1dGVzCmd1bHAuY29uZmlnLmpzb24KZ3VscGZpbGUuanMK
 UkVBRE1FLm1kCnRzY29uZmlnLmpzb24KdHlwaW5ncy5qc29u
+node_modules/**
+typings/**
+**/*.ts
+**/*.scss
+src/**

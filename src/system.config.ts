@@ -106,7 +106,7 @@ class Configuration {
 }
 
 new Configuration()
-    .useDevelopment()
+    .useProduction()
     .registerLibraries(<IPackage[]>[
         {
             name: 'app',
@@ -126,7 +126,8 @@ new Configuration()
         {
             name: 'underscore',
             main: 'underscore',
-            production: 'node_modules/underscore'
+            development: 'node_modules/underscore',
+            production: 'https://npmcdn.com/underscore'            
         }
     ])
     .queueImport('underscore')
