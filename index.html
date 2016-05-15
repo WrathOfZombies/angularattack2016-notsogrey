@@ -2,28 +2,36 @@
 <html>
 
 <head>
-  <title>Not So Grey</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Not So Grey</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 1. Load libraries -->
-  <script src="https://rumblex.s3.amazonaws.com/starter/jquery/dist/jquery.min.js"></script>
-  <script src="www/scripts/w3color.js"></script>
-  <script src="www/scripts/Vibrant.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    
+    <!-- 1. Load libraries -->
+    <script src="https://rumblex.s3.amazonaws.com/starter/jquery/dist/jquery.min.js"></script>
+    <script src="www/scripts/w3color.js"></script>
+    <script src="www/scripts/Vibrant.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
-  <!-- IE required polyfill -->
-  <script src="https://rumblex.s3.amazonaws.com/starter/es6-shim/es6-shim.min.js"></script>
-  <script src="https://rumblex.s3.amazonaws.com/starter/zone.js/dist/zone.js"></script>
-  <script src="https://rumblex.s3.amazonaws.com/starter/reflect-metadata/Reflect.js"></script>
+    <!-- IE required polyfill -->
+    <script src="https://rumblex.s3.amazonaws.com/starter/es6-shim/es6-shim.min.js"></script>
+    <script src="https://rumblex.s3.amazonaws.com/starter/zone.js/dist/zone.js"></script>
+    <script src="https://rumblex.s3.amazonaws.com/starter/reflect-metadata/Reflect.js"></script>
 
-  <!-- 2. Configure SystemJS -->
-  <script src="https://rumblex.s3.amazonaws.com/starter/systemjs/dist/system.src.js"></script>
-  <script src="www/system.config.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="https://rumblex.s3.amazonaws.com/starter/systemjs/dist/system.src.js"></script>
+    <script src="www/system.config.js"></script>
 </head>
 
 <body>
-  <not-so-grey>Loading Not So Grey...</not-so-grey>
+    <div class="container-fluid">
+        <div class="row">
+            <not-so-grey>Loading Not So Grey...</not-so-grey>
+        </div>
+    </div>
 </body>
 
 </html>
