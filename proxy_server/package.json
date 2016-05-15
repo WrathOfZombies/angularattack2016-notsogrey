@@ -1,0 +1,28 @@
+{
+  "name": "crossorigin.me",
+  "description": "Proxy to access resources that lack the Access-Control-Allow-Origin * header",
+  "version": "0.0.1",
+  "author": {
+    "name": "technoboy10",
+    "email": "connor@crossorigin.me"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "request": "^2.40.0"
+  },
+  "keywords": [
+    "cors",
+    "proxy",
+    "server",
+    "heroku"
+  ],
+  "main": "index.js",
+  "bin": {
+    "crossorigin.me": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js --debug"
+  }
+}
