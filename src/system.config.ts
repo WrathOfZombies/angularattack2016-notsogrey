@@ -97,13 +97,11 @@ class Configuration {
 
 
     private multiImport() {
-        var firstPackage = this.imports.splice(0, 1)[0];
-        var promise = System.import(firstPackage);
-        this.imports.forEach(pkg => {
-            promise = promise.then(() => { return System.import(pkg); });
+        let importPromises = this.imports.map(pkg => {
+            return System.import(pkg);
         });
 
-        return promise;
+        return Promise.all(importPromises);
     }
 }
 
@@ -127,9 +125,16 @@ new Configuration()
         },
         {
             name: 'underscore',
-            production: 'node_modules/underscore/underscore.js'
+            main: '/underscore',
+            production: 'node_modules/underscore'
+        },
+        {
+            name: 'vibrant',
+            main: '/src/vibrant',
+            production: 'node_modules/vibrant'
         }
     ])
     .queueImport('underscore')
-    .queueImport('app')    
+    .queueImport('vibrant')
+    .queueImport('app')
     .configure();

@@ -17,10 +17,6 @@ export class NotSoGreyComponent {
     ) {
         _dribbbleService.getShotsForColor('#FF4444')
             .then(results => console.log(results))
-            .catch(error => console.error(error));
-
-        _colorService.getThemesForColor('#FF4444')
-            .then(results => console.log(results))
-            .catch(error => console.error(error));
+            .catch(error => console.error(error));        
     }
 }
