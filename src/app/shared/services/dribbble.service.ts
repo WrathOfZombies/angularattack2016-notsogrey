@@ -49,7 +49,7 @@ export class DribbbleService {
     }
 
     private _getSearchUrl(hexCode: string, startIndex: number, count: number): string {
-        let corsUrl = 'http://localhost:3000/',
+        let corsUrl = 'https://crossorigin.me/',
             baseUrl = corsUrl + 'https://www.dribbble.com/colors/@color?page=@startIndex&per_page=@count';
 
         return Utils.replace(baseUrl)
