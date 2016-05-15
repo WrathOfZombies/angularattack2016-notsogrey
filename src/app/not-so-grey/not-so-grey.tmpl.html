@@ -1,32 +1,276 @@
-<div class="col-xs-12 col-sm-4 col-md-5 nsg-panel">
-    <h1>This is a panel</h1>
-    <p>This is going to stack indefinitely</p>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="">sass</a></li>
-                <li><a href="">sass <span class="new badge">4</span></a></li>
-                <li><a href="">sass</a></li>
-            </ul>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
         </div>
-    </nav>
-    <div class="row">
-        <div class="col s4">
-            <i class="material-icons">chevron_left</i>
-            <p>Printing colors</p>
-            <ul class="collection">
-                <li *ngFor="let color of colors">
-                    <p>{{color.hex}}</p>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
                 </li>
             </ul>
-            <i class="material-icons">chevron_right</i>
         </div>
-        <div class="col s8">
-            <div *ngIf="selectedColor">
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Color list fragment -->
+        <div class="col-xs-12 col-md-3">
+            <div class="nsg-panel">
+                <div class="horizontal-panel">
+                    <div>
+                        <button type="button" class="medium-btn" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        </button>
+                    </div>
+
+                    <div class="color-list">
+                        <div class="list-item" style="background-color: violet"></div>
+                        <div class="list-item" style="background-color: indigo"></div>
+                        <div class="list-item" style="background-color: blue"></div>
+                        <div class="list-item" style="background-color: green"></div>
+                        <div class="list-item" style="background-color: yellow"></div>
+                        <div class="list-item" style="background-color: orange"></div>
+                        <div class="list-item" style="background-color: red"></div>
+                        <div class="list-item" style="background-color: violet"></div>
+                        <div class="list-item" style="background-color: indigo"></div>
+                        <div class="list-item" style="background-color: blue"></div>
+                        <div class="list-item" style="background-color: green"></div>
+                        <div class="list-item" style="background-color: yellow"></div>
+                        <div class="list-item" style="background-color: orange"></div>
+                        <div class="list-item" style="background-color: red"></div>
+                        <div class="list-item" style="background-color: violet"></div>
+                        <div class="list-item" style="background-color: indigo"></div>
+                        <div class="list-item" style="background-color: blue"></div>
+                        <div class="list-item" style="background-color: green"></div>
+                        <div class="list-item" style="background-color: yellow"></div>
+                        <div class="list-item" style="background-color: orange"></div>
+                        <div class="list-item" style="background-color: red"></div>
+                        <div class="list-item" style="background-color: violet"></div>
+                        <div class="list-item" style="background-color: indigo"></div>
+                        <div class="list-item" style="background-color: blue"></div>
+                        <div class="list-item" style="background-color: green"></div>
+                        <div class="list-item" style="background-color: yellow"></div>
+                        <div class="list-item" style="background-color: orange"></div>
+                        <div class="list-item" style="background-color: red"></div>
+                        <div class="list-item" style="background-color: violet"></div>
+                        <div class="list-item" style="background-color: indigo"></div>
+                        <div class="list-item" style="background-color: blue"></div>
+                        <div class="list-item" style="background-color: green"></div>
+                        <div class="list-item" style="background-color: yellow"></div>
+                        <div class="list-item" style="background-color: orange"></div>
+                        <div class="list-item" style="background-color: red"></div>
+                        <div class="list-item" style="background-color: violet"></div>
+                        <div class="list-item" style="background-color: indigo"></div>
+                        <div class="list-item" style="background-color: blue"></div>
+                        <div class="list-item" style="background-color: green"></div>
+                        <div class="list-item" style="background-color: yellow"></div>
+                        <div class="list-item" style="background-color: orange"></div>
+                        <div class="list-item" style="background-color: red"></div>
+                        <div class="list-item" style="background-color: violet"></div>
+                        <div class="list-item" style="background-color: indigo"></div>
+                        <div class="list-item" style="background-color: blue"></div>
+                        <div class="list-item" style="background-color: green"></div>
+                        <div class="list-item" style="background-color: yellow"></div>
+                        <div class="list-item" style="background-color: orange"></div>
+                        <div class="list-item" style="background-color: red"></div>
+                        <div class="list-item" style="background-color: violet"></div>
+                        <div class="list-item" style="background-color: indigo"></div>
+                        <div class="list-item" style="background-color: blue"></div>
+                        <div class="list-item" style="background-color: green"></div>
+                        <div class="list-item" style="background-color: yellow"></div>
+                        <div class="list-item" style="background-color: orange"></div>
+                        <div class="list-item" style="background-color: red"></div>
+                    </div>
+
+                    <div>
+                        <button type="button" class="medium-btn" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!--<div *ngIf="selectedColor">
                 <h2>{{selectedColor.name}} details!</h2>
                 <div><label>id: </label>{{selectedColor.hex}}</div>
+            </div>-->
+
+        <!-- Color details fragment -->
+        <div class="col-xs-12 col-md-3">
+            <div class="nsg-panel">
+                <div class="vertical-panel">
+                    <div class="imgContainer">
+                        <img src="http://bossfight.co/wp-content/uploads/2015/08/boss-fight-free-stock-high-resolution-images-photos-photography-green-door-window-960x667.jpeg">
+                    </div>
+                    <div class="detail-container">
+                        <div class="color-header" style="background-color: green">
+                            <span class="colorCenterTitle">FOREST GREEN</span>
+                        </div>
+                        <div class="section-container">
+                            <div class="section">
+                                <div>
+                                    <span class="sectionTitle">CMYK</span>
+
+                                    <div class="row">
+                                        <label class="sectionItem">C <span class="colorValue">81%</span></label>
+                                        <label class="sectionItem">M <span class="colorValue">8%</span></label>
+                                        <label class="sectionItem">Y <span class="colorValue">17%</span></label>
+                                        <label class="sectionItem">K <span class="colorValue">2%</span></label>
+                                        <button type="button" class="small-btn corner-btn" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-divider"></div>
+                            <div class="section">
+                                <div>
+                                    <span class="sectionTitle">RGB</span>
+
+                                    <div class="row">
+                                        <label class="sectionItem">R <span class="colorValue">28</span></label>
+                                        <label class="sectionItem">G <span class="colorValue">163</span></label>
+                                        <label class="sectionItem">B <span class="colorValue">45</span></label>
+                                        <button type="button" class="small-btn corner-btn" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-divider"></div>
+                            <div class="section">
+                                <div>
+                                    <span class="sectionTitle">HSL</span>
+
+                                    <div class="row">
+                                        <label class="sectionItem">H <span class="colorValue">120&deg;</span></label>
+                                        <label class="sectionItem">S <span class="colorValue">8%</span></label>
+                                        <label class="sectionItem">L <span class="colorValue">17%</span></label>
+                                        <button type="button" class="small-btn corner-btn" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-divider"></div>
+                            <div class="section">
+                                <div>
+                                    <span class="sectionTitle">HEX</span>
+
+                                    <div class="row">
+                                        <label class="sectionItem"># <span class="colorValue">1CA32D</span></label>
+                                        <button type="button" class="small-btn corner-btn" aria-label="Left Align">
+                                            <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <!-- Color details edit fragment -->
+        <div class="col-xs-12 col-md-3">
+            <div class="nsg-panel">
+                <div class="vertical-panel">
+                    <div class="editColorHeader">
+                        <div class="colorSelected"></div>
+                    </div>
+                    <div class="edit-detail-container">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#CMYK" aria-controls="home" role="tab"
+                                                                      data-toggle="tab">CMYK</a></li>
+                            <li role="presentation"><a href="#RGB" aria-controls="profile" role="tab" data-toggle="tab">RGB</a>
+                            </li>
+                            <li role="presentation"><a href="#HSL" aria-controls="messages" role="tab"
+                                                       data-toggle="tab">HSL</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="CMYK">
+                                <div class="row">
+                                    <input type="range" min="0" max="100" value="81"/>
+                                    <span class="colorValue">81%</span>
+                                </div>
+                                <div class="row">
+                                    <input type="range" min="0" max="100" value="8"/>
+                                    <span class="colorValue">8%</span>
+                                </div>
+                                <div class="row">
+                                    <input type="range" min="0" max="100" value="17"/>
+                                    <span class="colorValue">17%</span>
+                                </div>
+                                <div class="row">
+                                    <input type="range" min="0" max="100" value="2"/>
+                                    <span class="colorValue">2%</span>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="RGB">
+                                <div class="row">
+                                    <input type="range" min="0" max="255" value="28"/>
+                                    <span class="colorValue">28</span>
+                                </div>
+                                <div class="row">
+                                    <input type="range" min="0" max="255" value="163"/>
+                                    <span class="colorValue">163</span>
+                                </div>
+                                <div class="row">
+                                    <input type="range" min="0" max="255" value="45"/>
+                                    <span class="colorValue">45</span>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="HSL">
+                                <div class="row">
+                                    <input type="range" min="0" max="180" value="120"/>
+                                    <span class="colorValue">120&deg;</span>
+                                </div>
+                                <div class="row">
+                                    <input type="range" min="0" max="100" value="8"/>
+                                    <span class="colorValue">8%</span>
+                                </div>
+                                <div class="row">
+                                    <input type="range" min="0" max="100" value="17"/>
+                                    <span class="colorValue">17%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dribble shots -->
+        <div class="col-xs-12 col-md-3">
+            <p>Printing colors</p>
         </div>
     </div>
 </div>
