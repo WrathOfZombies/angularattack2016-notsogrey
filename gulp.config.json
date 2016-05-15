@@ -9,7 +9,6 @@
     },
     "port": 8080,
     "files": [
-        "./www/**/*.*",
-        "./index.html"
+        "./src/**/*.{html,scss,ts}"
     ]
 }

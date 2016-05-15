@@ -1,16 +1,26 @@
 declare var Vibrant: any;
 import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ImageHelper {
-    constructor() {
+    constructor(private _http: Http) {
 
     }
 
     processImage(image: HTMLImageElement) {
         var vibrant = new Vibrant(image);
         var swatches = vibrant.swatches();
-        console.log(swatches);
+        var output = [];
+        _.each(swatches, (swatch: any) => {
+            if (swatch) {
+                var color = w3color('rgb(' + swatch.rgb[0] + ',' + swatch.rgb[1] + ',' + swatch.rgb[2] + ')');
+                output.push(color);
+            }
+        });
+
+        return output;
     }
 
     drawImageScaled(image: HTMLImageElement, canvas: HTMLCanvasElement) {
@@ -25,5 +35,5 @@ export class ImageHelper {
             image, 0, 0, image.width, image.height,
             centerX, centerY, image.width * ratio, image.height * ratio
         );
-    }
+    }    
 }
