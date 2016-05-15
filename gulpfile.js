@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     del = require('del'),
     sass = require('gulp-sass'),
+    concat = require('gulp-concat'),
     typescript = require('gulp-typescript'),
     sourcemaps = require('gulp-sourcemaps'),
     config = require('./gulp.config.json'),
@@ -15,10 +16,17 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('compile:sass', function () {
-    return gulp.src(config.app.source + "/**/*.scss")
+    return gulp.src(config.app.source + "/app/**/*.scss")
         .pipe(sass())
         .pipe(gulp.dest(config.app.dest));
 });
+
+gulp.task('compile:common:sass', function () {
+    return gulp.src(config.app.source + "/styles/**/*.scss")
+        .pipe(sass())
+        .pipe(concat('not-so-grey.css'))
+        .pipe(gulp.dest(config.app.dest));
+})
 
 gulp.task('compile:ts', function () {
     var tsResult = tsProject.src()
@@ -36,10 +44,11 @@ gulp.task('copy', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(config.app.source + "/**/*.scss", ['compile:sass']);
+    gulp.watch(config.app.source + "/app/**/*.scss", ['compile:sass']);
+    gulp.watch(config.app.source + "/styles/**/*.scss", ['compile:common:sass']);
     gulp.watch(config.app.source + "/**/*.ts", ['compile:ts']);
     gulp.watch(config.app.source + "/**/!(*.ts|*.scss)", ['refresh']);
 });
 
-gulp.task('build', ['compile:sass', 'compile:ts', 'copy']);
+gulp.task('build', ['compile:sass', 'compile:common:sass', 'compile:ts', 'copy']);
 gulp.task('default', ['watch', 'build']);
