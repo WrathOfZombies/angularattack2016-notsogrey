@@ -13,7 +13,8 @@
     
     .sample {
         height: 20rem;
-        @include background-fill(cover);        
+        @include background-fill(cover);     
+        cursor: pointer;   
     }
 }
 

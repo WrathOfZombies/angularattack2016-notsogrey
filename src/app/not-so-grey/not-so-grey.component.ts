@@ -1,22 +1,21 @@
 import {Component} from '@angular/core';
-import {PathResolver} from '../shared/helpers/utilities';
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {ChooseComponent} from '../not-so-grey.choose/not-so-grey.choose.component';
-import {CustomizeComponent} from '../not-so-grey.customize/not-so-grey.customize.component'
-import {ColorService, ISwatch} from '../shared/services/color.service';
+import {CustomizeComponent} from '../not-so-grey.customize/not-so-grey.customize.component';
+import {PathResolver} from '../shared/helpers/utilities';
 
 let view = 'not-so-grey';
 @RouteConfig([
     {
         path: '/choose',
         name: 'Choose',
-        component: ChooseComponent,
-        useAsDefault: true
+        component: ChooseComponent
     },
     {
         path: '/customize/:hex',
         name: 'Customize',
-        component: CustomizeComponent
+        component: CustomizeComponent,
+        useAsDefault: true        
     }
 ])
 
@@ -29,9 +28,8 @@ let view = 'not-so-grey';
 })
 
 export class NotSoGreyComponent {
-
-    colors: ISwatch[];
-    constructor(private _colorService: ColorService) {
+    colors: any[];
+    constructor() {
         this.colors = [
             {
                 name: "",
@@ -57,5 +55,8 @@ export class NotSoGreyComponent {
         ];
 
         console.log(this.colors);
+
+        let color = w3color('#e6f3ff');
+        console.log(color.toHexString(), color.toRgbString(), color.toHsl(), color.toCmykString());
     }
 }
