@@ -180,6 +180,9 @@ button {
   height: 10rem;
   max-height: 15rem;
   min-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .editColorHeader {
@@ -266,6 +269,7 @@ button {
   border-radius: 5px;
 }
 
+/*Needs to be put under custom styling otherwise it will modify all nav tabs*/
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
    color: #ffffff;
    cursor: default;
@@ -333,4 +337,84 @@ input[type=range]:focus {
 
 input[type=range]:focus::-webkit-slider-runnable-track {
   background: #ccc;
+}
+
+/* Grid panel for images from dribble*/
+.grid-panel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.grid-content {
+  width: 30rem;
+  height: 30rem;
+}
+
+div.rig {
+  list-style: none;
+  font-size: 0px;
+  margin-left: -2.5%; /* should match li left margin */
+}
+div.rig div {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 0 2.5% 2.5%;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  vertical-align: top;
+  box-shadow: 0 0 5px #ddd;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+div.rig div img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 0 10px;
+}
+div.rig div h3 {
+  margin: 0 0 5px;
+}
+div.rig div p {
+  font-size: .9em;
+  line-height: 1.5em;
+  color: #999;
+}
+/* class for 2 columns */
+div.rig.columns-2 div {
+  width: 47.5%; /* this value + 2.5 should = 50% */
+}
+/* class for 3 columns */
+div.rig.columns-3 div {
+  width: 30.83%; /* this value + 2.5 should = 33% */
+}
+/* class for 4 columns */
+div.rig.columns-4 div {
+  width: 22.5%; /* this value + 2.5 should = 25% */
+}
+
+@media (max-width: 480px) {
+  div.grid-nav div {
+    display: block;
+    margin: 0 0 5px;
+  }
+  div.grid-nav div a {
+    display: block;
+  }
+  div.rig {
+    margin-left: 0;
+  }
+  div.rig div {
+    width: 100% !important; /* over-ride all li styles */
+    margin: 0 0 20px;
+  }
+}
+
+/*Customizing caruosal*/
+.carousel-control.right, .carousel-control.left {
+  background: none;
 }
