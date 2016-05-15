@@ -1,196 +1,74 @@
 <div class="row">
     <!-- Color list fragment -->
-    <div class="col-xs-12 col-md-4 nsg-panel">
+    <div class="col-xs-12 col-md-4 nsg-panel" style="padding-right:5px;">
         <div class="row">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
-
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         <div class="color-list">
-                            <div class="list-item" style="background-color: violet">
-                                <div style="padding: 2rem">
-                                    <p>FOREST GREEN</p>
-
-                                    <p>#CE73662</p>
+                            <div class="list-item" *ngFor="let color of lightnessBand" [ngStyle]="{'background-color': color.toHexString()}">
+                                <div style="padding: 2rem" (click)="selectColor(color)" [ngStyle]="{'color': color.isDark()?'#BBB':'#555'}">
+                                    <p [hidden]="color.toName()==''">{{color.toName()}}</p>
+                                    <p>{{color.toHexString()}}</p>
                                 </div>
                             </div>
-                            <div class="list-item" style="background-color: indigo">
-                                <div style="padding: 2rem">
-                                    <p>FOREST GREEN</p>
-
-                                    <p>#CE73662</p>
-                                </div>
-                            </div>
-                            <div class="list-item" style="background-color: blue">
-                                <div style="padding: 2rem">
-                                    <p>FOREST GREEN</p>
-
-                                    <p>#CE73662</p>
-                                </div>
-                            </div>
-                            <div class="list-item" style="background-color: green">
-                                <div style="padding: 2rem">
-                                    <p>FOREST GREEN</p>
-
-                                    <p>#CE73662</p>
-                                </div>
-                            </div>
-                            <div class="list-item" style="background-color: yellow">
-                                <div style="padding: 2rem">
-                                    <p>FOREST GREEN</p>
-
-                                    <p>#CE73662</p>
-                                </div>
-                            </div>
-                            <div class="list-item" style="background-color: orange">
-                                <div style="padding: 2rem">
-                                    <p>FOREST GREEN</p>
-
-                                    <p>#CE73662</p>
-                                </div>
-                            </div>
-                            <div class="list-item" style="background-color: red">
-                                <div style="padding: 2rem">
-                                    <p>FOREST GREEN</p>
-
-                                    <p>#CE73662</p>
-                                </div>
-                            </div>
-                            <div class="list-item" style="background-color: violet">
-                                <div style="padding: 2rem">
-                                    <p>FOREST GREEN</p>
-
-                                    <p>#CE73662</p>
-                                </div>
-                            </div>
-                            <div class="list-item" style="background-color: indigo">
-                                <div style="padding: 2rem">
-                                    <p>FOREST GREEN</p>
-
-                                    <p>#CE73662</p>
-                                </div>
-                            </div>
-                            <div class="list-item" style="background-color: blue"></div>
-                            <div class="list-item" style="background-color: green"></div>
-                            <div class="list-item" style="background-color: yellow"></div>
-                            <div class="list-item" style="background-color: orange"></div>
-                            <div class="list-item" style="background-color: red"></div>
-                            <div class="list-item" style="background-color: violet"></div>
-                            <div class="list-item" style="background-color: indigo"></div>
-                            <div class="list-item" style="background-color: blue"></div>
-                            <div class="list-item" style="background-color: green"></div>
-                            <div class="list-item" style="background-color: yellow"></div>
-                            <div class="list-item" style="background-color: orange"></div>
-                            <div class="list-item" style="background-color: red"></div>
-                            <div class="list-item" style="background-color: violet"></div>
-                            <div class="list-item" style="background-color: indigo"></div>
-                            <div class="list-item" style="background-color: blue"></div>
-                            <div class="list-item" style="background-color: green"></div>
-                        </div>
-
-                    </div>
-                    <div class="item">
-                        <div class="color-list">
-                            <div class="list-item" style="background-color: violet"></div>
-                            <div class="list-item" style="background-color: indigo"></div>
-                            <div class="list-item" style="background-color: blue"></div>
-                            <div class="list-item" style="background-color: green"></div>
-                            <div class="list-item" style="background-color: yellow"></div>
-                            <div class="list-item" style="background-color: orange"></div>
-                            <div class="list-item" style="background-color: red"></div>
-                            <div class="list-item" style="background-color: violet"></div>
-                            <div class="list-item" style="background-color: indigo"></div>
-                            <div class="list-item" style="background-color: blue"></div>
-                            <div class="list-item" style="background-color: green"></div>
-                            <div class="list-item" style="background-color: yellow"></div>
-                            <div class="list-item" style="background-color: orange"></div>
-                            <div class="list-item" style="background-color: red"></div>
-                            <div class="list-item" style="background-color: violet"></div>
-                            <div class="list-item" style="background-color: indigo"></div>
-                            <div class="list-item" style="background-color: blue"></div>
-                            <div class="list-item" style="background-color: green"></div>
-                            <div class="list-item" style="background-color: yellow"></div>
-                            <div class="list-item" style="background-color: orange"></div>
-                            <div class="list-item" style="background-color: red"></div>
-                            <div class="list-item" style="background-color: violet"></div>
-                            <div class="list-item" style="background-color: indigo"></div>
-                            <div class="list-item" style="background-color: blue"></div>
-                            <div class="list-item" style="background-color: green"></div>
                         </div>
                     </div>
-                    ...
                 </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
     </div>
 
     <!-- Color details fragment -->
-    <div class="col-xs-12 col-md-4 nsg-panel">
-        <div class="row">
-            <div class="vertical-panel">
-                <div class="detail-container">
-                    <div class="color-header" style="background-color: green">
-                        <span class="colorCenterTitle">FOREST GREEN</span>
+    <div class="col-xs-12 col-md-4 nsg-panel" style="padding-left: 0px;">
+        <div class="vertical-panel">
+            <div class="detail-container">
+                <div class="color-header" [ngStyle]="{'background-color': selectedColor.toHexString()}">
+                    <span class="colorCenterTitle" [ngStyle]="{'color': selectedColor.isDark()?'#BBB':'#555'}" [hidden]="selectedColor.toName()==''">{{selectedColor.toName()}}</span>
+                </div>
+                <div class="section-container">
+                    <div class="section">
+                        <div>
+                            <span class="sectionTitle">CMYK</span>
+                            <br />
+                            <label class="sectionItem">C <span class="colorValue">{{selectedColor.cyan * 100}}%</span></label>
+                            <label class="sectionItem">M <span class="colorValue">{{selectedColor.magenta * 100}}%</span></label>
+                            <label class="sectionItem">Y <span class="colorValue">{{selectedColor.yellow * 100}}%</span></label>
+                            <label class="sectionItem">K <span class="colorValue">{{selectedColor.toCmyk().k * 100}}%</span></label>
+                            <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
+                        </div>
                     </div>
-                    <div class="section-container">
-                        <div class="section">
-                            <div>
-                                <span class="sectionTitle">CMYK</span>
-                                <br />
-                                <label class="sectionItem">C <span class="colorValue">81%</span></label>
-                                <label class="sectionItem">M <span class="colorValue">8%</span></label>
-                                <label class="sectionItem">Y <span class="colorValue">17%</span></label>
-                                <label class="sectionItem">K <span class="colorValue">2%</span></label>
-                                <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
-                            </div>
+                    <div class="section-divider"></div>
+                    <div class="section">
+                        <div>
+                            <span class="sectionTitle">RGB</span>
+                            <br />
+                            <label class="sectionItem">R <span class="colorValue">{{selectedColor.red}}</span></label>
+                            <label class="sectionItem">G <span class="colorValue">{{selectedColor.green}}</span></label>
+                            <label class="sectionItem">B <span class="colorValue">{{selectedColor.blue}}</span></label>
+                            <label class="sectionItem">A <span class="colorValue">{{selectedColor.toRgb().a}}</span></label>
+                            <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
                         </div>
-                        <div class="section-divider"></div>
-                        <div class="section">
-                            <div>
-                                <span class="sectionTitle">RGB</span>
-                                <br />
-                                <label class="sectionItem">R <span class="colorValue">28</span></label>
-                                <label class="sectionItem">G <span class="colorValue">163</span></label>
-                                <label class="sectionItem">B <span class="colorValue">45</span></label>
-                                <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
-                            </div>
+                    </div>
+                    <div class="section-divider"></div>
+                    <div class="section">
+                        <div>
+                            <span class="sectionTitle">HSL</span>
+                            <br />
+                            <label class="sectionItem">H <span class="colorValue">{{selectedColor.hue}}</span></label>
+                            <label class="sectionItem">S <span class="colorValue">{{selectedColor.sat * 100}}%</span></label>
+                            <label class="sectionItem">L <span class="colorValue">{{selectedColor.lightness * 100}}%</span></label>
+                            <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
                         </div>
-                        <div class="section-divider"></div>
-                        <div class="section">
-                            <div>
-                                <span class="sectionTitle">HSL</span>
-                                <br />
-                                <label class="sectionItem">H <span class="colorValue">120&deg;</span></label>
-                                <label class="sectionItem">S <span class="colorValue">8%</span></label>
-                                <label class="sectionItem">L <span class="colorValue">17%</span></label>
-                                <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
-                            </div>
-                        </div>
-                        <div class="section-divider"></div>
-                        <div class="section">
-                            <div>
-                                <span class="sectionTitle">HEX</span>
-                                <br />
-                                <label class="sectionItem"># <span class="colorValue">1CA32D</span></label>
-                                <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
-                            </div>
+                    </div>
+                    <div class="section-divider"></div>
+                    <div class="section">
+                        <div>
+                            <span class="sectionTitle">HEX</span>
+                            <br />
+                            <label class="sectionItem">HEX <span class="colorValue">{{selectedColor.toHexString()}}</span></label>
+                            <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
                         </div>
                     </div>
                 </div>
@@ -202,64 +80,27 @@
     <div class="col-xs-12 col-md-4 nsg-panel">
         <div class="row">
             <div class="vertical-panel">
-                <div class="editColorHeader">
-                    <div class="colorSelected"></div>
-                </div>
+                <div class="editColorHeader" [ngStyle]="{'background-color': modifiedColor.toHexString()}"></div>
                 <div class="edit-detail-container">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#CMYK" aria-controls="home" role="tab" data-toggle="tab">CMYK</a></li>
-                        <li role="presentation"><a href="#RGB" aria-controls="profile" role="tab" data-toggle="tab">RGB</a>
-                        </li>
-                        <li role="presentation"><a href="#HSL" aria-controls="messages" role="tab" data-toggle="tab">HSL</a></li>
+                        <li role="presentation"><a href="#RGB" aria-controls="profile" role="tab" data-toggle="tab">RGB</a> </li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="CMYK">
+                        <div role="tabpanel" class="tab-pane active" id="RGB">
                             <div class="row">
-                                <input type="range" min="0" max="100" value="81" />
-                                <span class="colorValue">81%</span>
+                                <input type="range" min="0" max="255" [(ngModel)]="selectedColor.red" />
+                                <span class="colorValue">{{selectedColor.red}}</span>
                             </div>
                             <div class="row">
-                                <input type="range" min="0" max="100" value="8" />
-                                <span class="colorValue">8%</span>
+                                <input type="range" min="0" max="255" [(ngModel)]="selectedColor.green" />
+                                <span class="colorValue">{{selectedColor.green}}</span>
                             </div>
                             <div class="row">
-                                <input type="range" min="0" max="100" value="17" />
-                                <span class="colorValue">17%</span>
-                            </div>
-                            <div class="row">
-                                <input type="range" min="0" max="100" value="2" />
-                                <span class="colorValue">2%</span>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="RGB">
-                            <div class="row">
-                                <input type="range" min="0" max="255" value="28" />
-                                <span class="colorValue">28</span>
-                            </div>
-                            <div class="row">
-                                <input type="range" min="0" max="255" value="163" />
-                                <span class="colorValue">163</span>
-                            </div>
-                            <div class="row">
-                                <input type="range" min="0" max="255" value="45" />
-                                <span class="colorValue">45</span>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="HSL">
-                            <div class="row">
-                                <input type="range" min="0" max="180" value="120" />
-                                <span class="colorValue">120&deg;</span>
-                            </div>
-                            <div class="row">
-                                <input type="range" min="0" max="100" value="8" />
-                                <span class="colorValue">8%</span>
-                            </div>
-                            <div class="row">
-                                <input type="range" min="0" max="100" value="17" />
-                                <span class="colorValue">17%</span>
+                                <input type="range" min="0" max="255" [(ngModel)]="selectedColor.blue" />
+                                <span class="colorValue">{{selectedColor.blue}}</span>
                             </div>
                         </div>
                     </div>

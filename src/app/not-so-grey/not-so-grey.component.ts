@@ -1,21 +1,23 @@
-import {Component} from '@angular/core';
+import {Component, enableProdMode} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {ChooseComponent} from '../not-so-grey.choose/not-so-grey.choose.component';
 import {CustomizeComponent} from '../not-so-grey.customize/not-so-grey.customize.component';
 import {PathResolver} from '../shared/helpers/utilities';
+
+enableProdMode();
 
 let view = 'not-so-grey';
 @RouteConfig([
     {
         path: '/choose',
         name: 'Choose',
-        component: ChooseComponent
+        component: ChooseComponent,
+        useAsDefault: true                
     },
     {
-        path: '/customize/:hex',
+        path: '/customize',
         name: 'Customize',
-        component: CustomizeComponent,
-        useAsDefault: true        
+        component: CustomizeComponent
     }
 ])
 
@@ -28,35 +30,7 @@ let view = 'not-so-grey';
 })
 
 export class NotSoGreyComponent {
-    colors: any[];
     constructor() {
-        this.colors = [
-            {
-                name: "",
-                mode: "",
-                values: [22, 2, 3],
-                hex: "#333333",
-                colorIndex: '2'
-            },
-            {
-                name: "",
-                mode: "",
-                values: [22, 2, 3],
-                hex: "#333332",
-                colorIndex: '2'
-            },
-            {
-                name: "",
-                mode: "",
-                values: [22, 2, 3],
-                hex: "#333312",
-                colorIndex: '2'
-            }
-        ];
-
-        console.log(this.colors);
-
-        let color = w3color('#e6f3ff');
-        console.log(color.toHexString(), color.toRgbString(), color.toHsl(), color.toCmykString());
+        
     }
 }
