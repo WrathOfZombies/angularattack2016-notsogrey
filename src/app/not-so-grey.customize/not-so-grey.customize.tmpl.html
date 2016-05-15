@@ -1,1 +1,151 @@
-<h2>Customize Image</h2>
+<div class="row">
+    <!-- Color list fragment -->
+    <div class="col-xs-12 col-md-4 nsg-panel" style="padding-right:5px;">
+        <div class="row">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="color-list">
+                            <div class="list-item" *ngFor="let color of lightnessBand" [ngStyle]="{'background-color': color.toHexString()}">
+                                <div style="padding: 2rem" (click)="selectColor(color)" [ngStyle]="{'color': color.isDark()?'#BBB':'#555'}">
+                                    <p [hidden]="color.toName()==''">{{color.toName()}}</p>
+                                    <p>{{color.toHexString()}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color details fragment -->
+    <div class="col-xs-12 col-md-4 nsg-panel" style="padding-left: 0px;">
+        <div class="vertical-panel">
+            <div class="detail-container">
+                <div class="color-header" [ngStyle]="{'background-color': selectedColor.toHexString()}">
+                    <span class="colorCenterTitle" [ngStyle]="{'color': selectedColor.isDark()?'#BBB':'#555'}" [hidden]="selectedColor.toName()==''">{{selectedColor.toName()}}</span>
+                </div>
+                <div class="section-container">
+                    <div class="section">
+                        <div>
+                            <span class="sectionTitle">CMYK</span>
+                            <br />
+                            <label class="sectionItem">C <span class="colorValue">{{selectedColor.cyan * 100}}%</span></label>
+                            <label class="sectionItem">M <span class="colorValue">{{selectedColor.magenta * 100}}%</span></label>
+                            <label class="sectionItem">Y <span class="colorValue">{{selectedColor.yellow * 100}}%</span></label>
+                            <label class="sectionItem">K <span class="colorValue">{{selectedColor.toCmyk().k * 100}}%</span></label>
+                            <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="section-divider"></div>
+                    <div class="section">
+                        <div>
+                            <span class="sectionTitle">RGB</span>
+                            <br />
+                            <label class="sectionItem">R <span class="colorValue">{{selectedColor.red}}</span></label>
+                            <label class="sectionItem">G <span class="colorValue">{{selectedColor.green}}</span></label>
+                            <label class="sectionItem">B <span class="colorValue">{{selectedColor.blue}}</span></label>
+                            <label class="sectionItem">A <span class="colorValue">{{selectedColor.toRgb().a}}</span></label>
+                            <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="section-divider"></div>
+                    <div class="section">
+                        <div>
+                            <span class="sectionTitle">HSL</span>
+                            <br />
+                            <label class="sectionItem">H <span class="colorValue">{{selectedColor.hue}}</span></label>
+                            <label class="sectionItem">S <span class="colorValue">{{selectedColor.sat * 100}}%</span></label>
+                            <label class="sectionItem">L <span class="colorValue">{{selectedColor.lightness * 100}}%</span></label>
+                            <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                    <div class="section-divider"></div>
+                    <div class="section">
+                        <div>
+                            <span class="sectionTitle">HEX</span>
+                            <br />
+                            <label class="sectionItem">HEX <span class="colorValue">{{selectedColor.toHexString()}}</span></label>
+                            <button type="button" class="small-btn corner-btn" aria-label="Left Align"><span class="glyphicon glyphicon-copy" aria-hidden="true"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color details edit fragment -->
+    <div class="col-xs-12 col-md-4 nsg-panel">
+        <div class="row">
+            <div class="vertical-panel">
+                <div class="editColorHeader" [ngStyle]="{'background-color': modifiedColor.toHexString()}"></div>
+                <div class="edit-detail-container">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"><a href="#RGB" aria-controls="profile" role="tab" data-toggle="tab">RGB</a> </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="RGB">
+                            <div class="row">
+                                <input type="range" min="0" max="255" [(ngModel)]="selectedColor.red" />
+                                <span class="colorValue">{{selectedColor.red}}</span>
+                            </div>
+                            <div class="row">
+                                <input type="range" min="0" max="255" [(ngModel)]="selectedColor.green" />
+                                <span class="colorValue">{{selectedColor.green}}</span>
+                            </div>
+                            <div class="row">
+                                <input type="range" min="0" max="255" [(ngModel)]="selectedColor.blue" />
+                                <span class="colorValue">{{selectedColor.blue}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dribble shots -->
+    <!--<div class="col-xs-12 col-md-3 nsg-panel">
+        <div class="grid-panel">
+            <div class="rig columns-2">
+                <div>
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/78637/screenshots/1738453/xonom_1x.jpg" />
+
+                    <h3>Image Title</h3>
+                </div>
+                <div>
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/338896/screenshots/2261907/forest_1x.png" />
+
+                    <h3>Image Title</h3>
+                </div>
+                <div>
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/37385/screenshots/1814948/zip-code-800_1x.jpg" />
+
+                    <h3>Image Title</h3>
+                </div>
+                <div>
+                    <img src="http://bossfight.co/wp-content/uploads/2015/08/boss-fight-free-stock-high-resolution-images-photos-photography-green-door-window-960x667.jpeg"
+                    />
+
+                    <h3>Image Title</h3>
+                </div>
+                <div>
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/96139/screenshots/1139651/mock_fin_1x.png" />
+
+                    <h3>Image Title</h3>
+                </div>
+                <div>
+                    <img src="https://d13yacurqjgara.cloudfront.net/users/52758/screenshots/2150920/verde_charleston_j_fletcher_dribbble_1x.jpg"
+                    />
+
+                    <h3>Image Title</h3>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>
