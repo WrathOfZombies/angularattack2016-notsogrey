@@ -2,7 +2,7 @@
   "name": "not-so-grey",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrent \"npm run gulp\" \"npm run lite\" ",
+    "start": "concurrent \"npm run gulp\" \"npm run lite\" \"node proxy_server.js\"",
     "lite": "lite-server  -c gulp.config.json",
     "gulp": "gulp",
     "postinstall": "typings install",
@@ -41,6 +41,8 @@
     "gulp-typescript": "^2.10.0",
     "gulp-uglify": "^1.5.1",
     "gulp-sass": "^2.3.1",
-    "del": "^2.2.0"
+    "del": "^2.2.0",
+    "express": "^4.13.4",
+    "request": "^2.72.0"
   }
 }

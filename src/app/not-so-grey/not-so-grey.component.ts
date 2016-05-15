@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {PathResolver} from '../shared/helpers/utilities';
 import {ColorService} from '../shared/services/color.service';
+import {DribbbleService} from '../shared/services/dribbble.service';
 
 let view = 'not-so-grey';
 @Component({
@@ -10,12 +11,16 @@ let view = 'not-so-grey';
 })
 
 export class NotSoGreyComponent {
-    constructor(private _colorService: ColorService) {
-        _colorService.getThemesFromColor('FF4444')
-            .then((collection) => {
-                console.log(collection.totalCount);
-                console.log(_.first(collection.themes).swatches);
-            })
-            .catch(exception => { console.error(exception); });
+    constructor(
+        private _dribbbleService: DribbbleService,
+        private _colorService: ColorService
+    ) {
+        _dribbbleService.getShotsForColor('#FF4444')
+            .then(results => console.log(results))
+            .catch(error => console.error(error));
+
+        _colorService.getThemesForColor('#FF4444')
+            .then(results => console.log(results))
+            .catch(error => console.error(error));
     }
 }
