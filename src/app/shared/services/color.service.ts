@@ -61,12 +61,13 @@ export class ColorService {
     constructor(private _http: Http) {
     }
 
-    getThemesFromColor(hexCode: string, page: number = 0, count: number = 36): Promise<IThemesCollection> {
+    getThemesForColor(hexCode: string, page: number = 0, count: number = 36): Promise<IThemesCollection> {
         let url = this._getSearchUrl(hexCode, page, count),
             headers = new Headers({
                 apiToken: this._apiToken,
                 Accept: 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
             }),
             options = new RequestOptions({ headers: headers });
 
@@ -77,7 +78,8 @@ export class ColorService {
     }
 
     private _getSearchUrl(hexCode: string, startIndex: number, count: number): string {
-        let baseUrl = 'https://color.adobe.com/api/v2/@location?startIndex=@startIndex&maxNumber=@count&q=%7B%22term%22%3A%22%23@color%22%7D',
+        let corsUrl = 'http://localhost:3000/',
+            baseUrl = corsUrl + 'https://color.adobe.com/api/v2/@location?startIndex=@startIndex&maxNumber=@count&q=%7B%22term%22%3A%22%23@color%22%7D',
             location = 'search';
 
         return Utils.replace(baseUrl)
@@ -96,7 +98,9 @@ export class ColorService {
 
         switch (mode) {
             default:
-                baseUrl = 'https://color.adobe.com/api/v2/@location?filter=@mode&startIndex=@startIndex&maxNumber=@count&sort=@sort&time=@time';
+                let corsUrl = 'http://localhost:3000/',
+                    baseUrl = corsUrl + 'https://color.adobe.com/api/v2/@location?filter=@mode&startIndex=@startIndex&maxNumber=@count&sort=@sort&time=@time';
+
                 location = 'themes';
 
                 let filter = 'public',

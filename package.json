@@ -2,7 +2,7 @@
   "name": "not-so-grey",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrent \"npm run gulp\" \"npm run lite\" ",
+    "start": "concurrent \"npm run gulp\" \"npm run lite\"",
     "lite": "lite-server  -c gulp.config.json",
     "gulp": "gulp",
     "postinstall": "typings install",
@@ -29,7 +29,8 @@
     "angular2-in-memory-web-api": "0.0.7",
     "bootstrap": "^3.3.6",
     "underscore": "1.8.3",
-    "jquery": "^2.2.3"
+    "jquery": "^2.2.3",
+    "vibrant": "*"
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
@@ -40,6 +41,7 @@
     "gulp-typescript": "^2.10.0",
     "gulp-uglify": "^1.5.1",
     "gulp-sass": "^2.3.1",
-    "del": "^2.2.0"
+    "del": "^2.2.0",
+    "gulp-concat": "^2.6.0"
   }
 }

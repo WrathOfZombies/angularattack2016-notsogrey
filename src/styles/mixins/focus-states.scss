@@ -1,0 +1,58 @@
+@mixin focus-states($background: null, $foreground: null, $scale: true) {
+    -moz-transition: background ease 0.1s, color ease 0.1s;
+    -o-transition: background ease 0.1s, color ease 0.1s;
+    -webkit-transition: background ease 0.1s, color ease 0.1s;
+    transition: background ease 0.1s, color ease 0.1s;
+
+    &:active, &:hover {
+        @if $background != null {
+            background: $background;
+        }
+        @else {
+            background: rgba(0,0,0,0.1);
+        }
+
+        @if $foreground != null {
+            color: $foreground;
+        }
+
+        cursor: pointer;
+    }
+
+    &:active {
+        @if $background != null {
+            background: $background;
+        }
+        @else {
+            background: rgba(0,0,0,0.2);
+        }
+
+        @if($scale) {
+            -moz-transform: scale3d(0.98, 0.98, 1);
+            -ms-transform: scale3d(0.98, 0.98, 1);
+            -o-transform: scale3d(0.98, 0.98, 1);
+            -webkit-transform: scale3d(0.98, 0.98, 1);
+            transform: scale3d(0.98, 0.98, 1);
+        }
+    }
+
+    &.disabled {
+        opacity: 0.6;
+        pointer-events: none;
+        cursor: not-allowed;
+
+        &:active, &:hover {
+            background: transparent;
+        }
+
+        @if($scale) {
+            &:active {
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+    }
+}
