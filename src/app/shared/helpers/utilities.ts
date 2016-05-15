@@ -23,5 +23,5 @@ export class Utils {
 
     static isEmpty(obj: any): boolean {
         return Utils.isNull(obj) || _.isEmpty(obj);
-    }
+    }    
 }

@@ -125,7 +125,7 @@ new Configuration()
         },
         {
             name: 'underscore',
-            main: '/underscore',
+            main: 'underscore',
             production: 'node_modules/underscore'
         }
     ])
