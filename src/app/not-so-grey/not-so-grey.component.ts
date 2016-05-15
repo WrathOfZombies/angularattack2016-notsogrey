@@ -17,8 +17,23 @@ export class NotSoGreyComponent {
         private _dribbbleService: DribbbleService,
         private _colorService: ColorService
     ) {
-        _dribbbleService.getShotsForColor('#FF4444')
-            .then(results => console.log(results))
-            .catch(error => console.error(error));
+        // _dribbbleService.getShotsForColor('#FF4444')
+        //     .then(results => console.log(results))
+        //     .catch(error => console.error(error));
+
+        {
+            let color = w3color('#e6f3ff');
+            console.log(color.toHexString(), color.toRgbString(), color.toHsl(), color.toCmykString());
+        }
+
+        {
+            let color = w3color('rgb(102,184,255)');
+            console.log(color.toHexString(), color.toRgbString(), color.toHsl(), color.toCmykString());
+        }
+
+        {
+            let color = w3color('hsl(208, 100%, 95%)');
+            console.log(color.toHexString(), color.toRgbString(), color.toHsl(), color.toCmykString());
+        }
     }
 }
