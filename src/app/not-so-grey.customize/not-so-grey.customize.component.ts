@@ -1,6 +1,5 @@
 import {Component, OnInit, ElementRef} from '@angular/core';
 import {PathResolver} from '../shared/helpers/utilities';
-import {ColorService} from '../shared/services/color.service';
 import {RouteParams} from '@angular/router-deprecated';
 
 let view = 'not-so-grey.customize';
@@ -20,8 +19,7 @@ export class CustomizeComponent implements OnInit {
 
     constructor(
         private _routeParams: RouteParams,
-        private _elementRef: ElementRef,
-        private _colorService: ColorService
+        private _elementRef: ElementRef
     ) {
 
     }
