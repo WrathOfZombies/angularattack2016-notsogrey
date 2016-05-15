@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import 'rxjs/add/operator/toPromise';
-import {Http, RequestOptions, Headers, Response} from '@angular/http';
+import {Http} from '@angular/http';
 import {Utils} from '../helpers/utilities';
 
 export interface IShot {

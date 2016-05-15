@@ -1,17 +1,59 @@
 <div class="row">
-    <div class="col-sm-8 col-md-9 col-lg-10 imageContainer">
-        <div id="drop" (dragover)="dragOver($event)" (drop)="drop($event)">
-            <div class="placeholder" *ngIf="!isLoaded">
-                Drop an image here to pick colors from it.
+    <div class="col-sm-8 col-md-9 imageContainer">
+        <div class="row">
+            <div id="drop" (dragover)="dragOver($event)" (drop)="drop($event)">
+                <div class="placeholder" [hidden]="isLoaded">
+                    <p>Not So Grey is an application based on the simple concept of finding the color codes of colors from our
+                        surrounding. The idea was conceived when I was trying to find an exact Hex code of a color present
+                        on a book cover. I really liked the color and wanted to use the exact shade in my web design project.
+                        The process for that was, well not so simple. And Not So Grey was born!</p>
+
+                    <p class="emphasis">Get started in 3 simple steps.</p>
+                    <ul>
+                        <li>
+                            <p>Drag and drop an image here or choose from the images on the right to begin.</p>
+                        </li>
+                        <li>
+                            <p>Choose the color you want to work with.</p>
+                        </li>
+                        <li>
+                            <p>Customize and copy to your clipboard.</p>
+                        </li>
+                    </ul>
+
+                    <small>Due to limitations, the dropped image must be on your device.</small>
+                </div>
+                <canvas></canvas>
             </div>
-            <canvas></canvas>
-        </div>
-        <div id="swatches">
-            <div class="swatch">
+            <div id="swatches">
+                <div class="swatch" *ngFor="let swatch of swatches" [ngStyle]="{'background-color': swatch.toHexString()}" (click)="select(swatch)">
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-4 col-md-3 col-lg-2">
-        list
+    <div class="col-sm-4 col-md-3 listContainer">
+        <div class="row">
+            <div class="sample" style="background-image: url(/www/assets/Boo-Dog-Christmas.jpg)" (click)="displayImage('/www/assets/Boo-Dog-Christmas.jpg')">
+            </div>
+            <div class="sample" style="background-image: url(/www/assets/W_2013_199.jpg)" (click)="displayImage('/www/assets/W_2013_199.jpg')">
+            </div>
+            <div class="sample" style="background-image: url(/www/assets/W_2013_232.jpg)" (click)="displayImage('/www/assets/W_2013_232.jpg')">
+            </div>
+            <div class="sample" style="background-image: url(/www/assets/W_2013_317_EDGES.jpg)" (click)="displayImage('/www/assets/W_2013_317_EDGES.jpg')">
+            </div>
+            <div class="sample" style="background-image: url(/www/assets/W_2013_323.jpg)" (click)="displayImage('/www/assets/W_2013_323.jpg')">
+            </div>
+            <div class="sample" style="background-image: url(/www/assets/W_2014_365.jpg)" (click)="displayImage('/www/assets/W_2014_365.jpg')">
+            </div>
+            <div class="sample" style="background-image: url(/www/assets/Deadpool-mask-logo.jpg)" (click)="displayImage('/www/assets/Deadpool-mask-logo.jpg')">
+            </div>
+            <div class="sample" style="background-image: url(/www/assets/gothic-photo_053938916_42.jpg)" (click)="displayImage('/www/assets/gothic-photo_053938916_42.jpg')">
+            </div>
+            <div class="sample" style="background-image: url(/www/assets/kartandtinki1_photo-wallpapers_02.jpg)" (click)="displayImage('/www/assets/kartandtinki1_photo-wallpapers_02.jpg')">
+            </div>
+
+            <div class="sample" style="background-image: url(/www/assets/HD-Wallpapers-for-mac-jer015.jpg)" (click)="displayImage('/www/assets/HD-Wallpapers-for-mac-jer015.jpg')">
+            </div>
+        </div>
     </div>
 </div>

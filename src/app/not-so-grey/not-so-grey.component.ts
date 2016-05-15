@@ -13,7 +13,7 @@ let view = 'not-so-grey';
         useAsDefault: true
     },
     {
-        path: '/customize',
+        path: '/customize/:hex',
         name: 'Customize',
         component: CustomizeComponent
     }

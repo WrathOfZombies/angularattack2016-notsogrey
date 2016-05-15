@@ -50,12 +50,12 @@ gulp.task('copy', function () {
 gulp.task('watch', function () {
     gulp.watch(config.app.source + "/app/**/*.scss", ['compile:sass']);
     gulp.watch(config.app.source + "/styles/**/*.scss", ['compile:common:sass']);
+    gulp.watch(config.app.source + "/app/**/*.ts", ['compile:ts']);
     gulp.watch([
         config.app.source + "/**/*",
         "!" + config.app.source + "/**/*.scss",
         "!" + config.app.source + "/**/*.ts",
-    ], ['compile:ts']);
-    gulp.watch(config.app.source + "/**/!(*.ts|*.scss)", ['copy']);
+    ], ['copy']);
 });
 
 gulp.task('build', ['compile:sass', 'compile:common:sass', 'compile:ts', 'copy']);
