@@ -85,9 +85,9 @@ class Configuration {
                 }
             }
             else {
-                // add map entries for angular packages in the form '@angular/common': 'https://npmcdn.com/@angular/common@0.0.0-3?main=browser'                
+                // add map entries for angular packages in the form '@angular/common': 'https://unpkg.com/@angular/common@0.0.0-3?main=browser'                
                 this.angularPackages.forEach(pkgName => {
-                    this.map[pkgName] = 'https://npmcdn.com/' + pkgName + this.ngVersion;
+                    this.map[pkgName] = 'https://unpkg.com/' + pkgName + this.ngVersion;
                 });
             }
         });
@@ -116,12 +116,12 @@ new Configuration()
         {
             name: 'rxjs',
             development: 'node_modules/rxjs',
-            production: 'https://npmcdn.com/rxjs@5.0.0-beta.6'
+            production: 'https://unpkg.com/rxjs@5.0.0-beta.6'
         },
         {
             name: 'angular2-in-memory-web-api',
             development: 'node_modules/angular2-in-memory-web-api',
-            production: 'https://npmcdn.com/angular2-in-memory-web-api'
+            production: 'https://unpkg.com/angular2-in-memory-web-api'
         },
         {
             name: 'underscore',
